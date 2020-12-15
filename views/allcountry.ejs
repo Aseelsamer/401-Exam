@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <% body.forEach(value=>{ %>
+<h2>Total Confirmed Cases:<%=value.Confirmed%></h2>
+<h3>Total Deaths Cases:<%=value.Deaths%></h3>
+   <p>Total Recovered Cases:<%=value.Recovered%></p>
+    <p>Date:<%=value.Date%></p>
+
+
+    <form action="/records" method="get">
+    <input type="hidden" name="confirmed" value="<%=value.Confirmed%>">
+    <input type="hidden" name="deaths" value="<%=value.Deaths%>">
+    <input type="hidden" name="recovered" value="<%=value.Recovered%>">
+    <input type="hidden" name="date" value="<%=value.Date%>">
+    <input type="submit" value="ADD TO MY RECORDS">
+    </form>
+<%})%>
+</body>
+</html>

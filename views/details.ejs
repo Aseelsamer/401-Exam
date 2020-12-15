@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+        <h2>Total Confirmed Cases:<%=result.Confirmed%></h2>
+        <h3>Total Deaths Cases:<%=result.Deaths%></h3>
+           <p>Total Recovered Cases:<%=result.Recovered%></p>
+            <p>Date:<%=result.Date%></p>
+<button id="ShowHiddenForm">update</button>
+<form action="/deleteForm/<%=result.id%>?_method=delete" method="post">
+<button>DELETE </button></form>
+        
+        
+            <form action="/updateForm/<%=result.id%>?_method=put" method="POST" id="Update">
+            <input type="hidden" name="confirmed" value="<%=result.Confirmed%>">
+            <input type="hidden" name="deaths" value="<%=result.Deaths%>">
+            <input type="hidden" name="recovered" value="<%=result.Recovered%>">
+            <input type="hidden" name="date" value="<%=result.Date%>">
+            <input type="submit" value="UPDATE">
+            </form>
+      
+            <script src="/app.js"></script>
+            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</body>
+</html>
